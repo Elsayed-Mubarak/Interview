@@ -1,0 +1,15 @@
+1- Upcasting and down casting : upcasting is kind of polymerphism and down casting may cause compile error and run time error.
+ more details in this link:https://www.youtube.com/watch?v=8WqWHBTWv2Y
+
+2- Ways to make an object eligible for garbage collection:
+	1- Object created inside a method When a method is called it goes inside the stack frame.
+	 When the method is popped from the stack, all its members dies and if some objects were 
+	created inside it then these objects becomes unreachable or anonymous after method execution 
+	and thus becomes eligible for garbage collection.
+	2- Reassigning the reference variable: When reference id of one object is referenced to reference 
+	id of some other object then the previous object has no any longer reference to it and becomes 
+	unreachable and thus becomes eligible for garbage
+	3- Nullifying the reference variable : When all the reference variables of an object are changed to NULL,
+	 it becomes unreachable and thus becomes eligible for garbage.
+	4-Anonymous object : The reference id of an anonymous object is not stored anywhere.
+	 Hence, it becomes unreachable.
