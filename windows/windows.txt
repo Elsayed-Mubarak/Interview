@@ -1,0 +1,4 @@
+get process by port no:
+netstat -aon | find "9999"
+kill the process:
+taskkill /F /PID 15776
