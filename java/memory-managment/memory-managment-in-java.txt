@@ -1,0 +1,2 @@
+Stack and Heap -> Stack stores local variables and references of objects , but Heap stores the object itself.
+refere to this link to see the difference in details: https://www.bing.com/videos/search?q=memory+mangment+in+java&&view=detail&mid=4D6132102A1BFB9CC0AA4D6132102A1BFB9CC0AA&&FORM=VRDGAR
