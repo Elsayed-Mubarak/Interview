@@ -13,3 +13,35 @@
 	 it becomes unreachable and thus becomes eligible for garbage.
 	4-Anonymous object : The reference id of an anonymous object is not stored anywhere.
 	 Hence, it becomes unreachable.
+3- Can we declare the main () method as final in Java?
+	Yes, we can declare the main () method as final in Java. The compiler does not throw any error.
+	If we declare any method as final by placing the final keyword then that method becomes the final method.
+	The main use of the final method in Java is they are not overridden.
+	We can not override final methods in subclasses.
+	If we are using inheritance and we need some methods not to overridden in subclasses then we need to make it final so that those methods can't be overridden by subclasses.
+	We can access final methods in the subclass but we can not override final methods.
+4- Can we declare a main method as private in Java?
+	Yes, we can declare the main method as private in Java.
+	It compiles successfully without any errors but at the runtime, it says that the main method is not public.
+5- Can We declare main() method as Non-Static in java?
+	The public static void main(String ar[]) method is the entry point of the execution in Java. When we run a .class file JVM searches for the main method and executes the contents of it line by line.
+	You can write the main method in your program without the static modifier, the program gets compiled without compilation errors. 
+	But, at the time of execution JVM does not consider this new method (without static) as the entry point of the program.  It searches for the main method which is public, static, with return type void, and a String array as an argument.
+	Error: Main method is not static in class Sample, please define the main method as − public static void main(String[] args)
+6- Can we declare an abstract method final or static in java?
+	If you declare a method in a class abstract to use it, you must override this method in the subclass. But, overriding is not possible with static methods. Therefore, an abstract method cannot be static.
+	If you still, try to declare an abstract method static a compile time error is generated saying “illegal combination of modifiers − abstract and static”.
+7- The final keyword in java is used to restrict the user. The java final keyword can be used in many context. Final can be:
+	1- variable: If you make any variable as final, you cannot change the value of final variable(It will be constant).
+	2- method: If you make any method as final, you cannot override it.final method is inherited but you cannot override it.
+	class Bike{  
+	  final void run(){System.out.println("running...");}  
+	}  
+	class Honda2 extends Bike{  
+  	 public static void main(String args[]){  
+  	  new Honda2().run();  
+  	 }  
+	}
+	Output:running...
+	3- class: If you make any class as final, you cannot extend it.
+

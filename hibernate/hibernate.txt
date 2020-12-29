@@ -1,0 +1,68 @@
+1- it is an ORM tool - considered as an implementation for jpa(java persistence api).
+2- its configuration is done in a file named hibernate.cfg.xml  
+	theses config are: url - username - password - driver -
+	 dialect :This property makes Hibernate generate the appropriate SQL for the chosen database.
+	- hibernate.connection.pool_size: Limits the number of connections waiting in the Hibernate database connection pool.
+	- hibernate.connection.autocommit: Allows autocommit mode to be used for the JDBC connection.
+3- <mapping>the name of entity class</mappping> & @Entity : these tells hibernate that this class is entity.
+4- to execute query like save and object: 
+	1- create session factory: responsible for creating sessions with hibernate configuration provided.
+	2- open session 
+	3- begin transaction.
+	4- execute the query.
+	5- commit the transaction.
+	6- close session.
+5- @Transient - 
+6- @Lob: larg object(clob or blob):
+	CLOB(Character Large Object): If data is text and is not enough to save in VARCHAR, then that data should be saved in CLOB.
+	BLOB(Binary Large Object): In case of double byte character large data is saved in BLOB data type.
+7-  @Temporal(TemporalType.DATE)
+8- The @Basic annotation has two attributes, optional and fetch.
+	The optional attribute is a boolean parameter that defines whether the marked field or property allows null. It defaults to true. So, if the field is not a primitive type, the underlying column is assumed to be nullable by default.
+	The fetch attribute accepts a member of the enumeration Fetch, which specifies whether the marked field or property should be lazily loaded or eagerly fetched. It defaults to FetchType.EAGER, but we can permit lazy loading by setting it to FetchType.LAZY.
+	@Basic vs @Column:
+		1- Attributes of the @Basic annotation are applied to JPA entities, whereas the attributes of @Column are applied to the database columns
+		2- @Basic annotation's optional attribute defines whether the entity field can be null or not; on the other hand, @Column annotation's nullable attribute specifies whether the corresponding database column can be null
+		3- We can use @Basic to indicate that a field should be lazily loaded
+		5- The @Column annotation allows us to specify the name of the mapped database column
+9- @Id - @GeneratedValue(strategy=GenerationType.(AUTO OR IDENTITY OR SEQUENCE OR TABLE))
+	1- auto: If we're using the default generation type, the persistence provider will determine values based on the type of the primary key attribute. 
+	This type can be numerical or UUID.
+	For numeric values, the generation is based on a sequence or table generator, while UUID values will use the UUIDGenerator.
+10- @Embedded is used to embed a type into another entity. & @Embeddable annotation to declare that a class will be embedded by other entities.
+11- @AssociateOverrides is used to override mappings of multiple properties or fields.used with @Embeded annotation.
+	ex: @AttributeOverrides({
+            @AttributeOverride(name = "myStr", column = @Column(name = "MY_STR_COL1")),
+            @AttributeOverride(name = "myInt", column = @Column(name = "MY_INT_COL1"))
+    		})
+   	    @Embedded
+   	    private ClassA classARef;
+
+            @AttributeOverrides({
+            @AttributeOverride(name = "myStr", column = @Column(name = "MY_STR_COL2")),
+            @AttributeOverride(name = "myInt", column = @Column(name = "MY_INT_COL2"))
+                })
+           @Embedded
+           private ClassA classARef2;
+12- @ElementCollection: used to save collection into table, hibernate creaates a new table (PHONES) for this collection with foreign key (CUST_ID) references to the class where this list is defined.
+this new table primary key will be (collection_id) and its type is (long) and generator is (hilo-generator).
+	ex: @ElementCollection
+	    @JoinTable(name = "PHONES", joinColumns = @JoinColumn(name = "CUST_ID"))
+            @GenericGenerator(name="hilo-generator",strategy="hilo") // hilo is a common generator that hibernate provides.
+	    @CollectionId(columns = @Column(name="collection_id"), type=@Type(type="long"), generator = "hilo-generator" )
+    	    private List<PhoneNumber> phoneNumbers;
+you can use @CollectionTable or @JoinTable.
+13- 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+For future learning:
+Springboot, JPA, Hibernate, mapstruct, Caching Frameworks, Memory Management, Apache Kafka.
+Composition vs inheritance
+Constructor injection vs setter injection vs @Autowired injection.
