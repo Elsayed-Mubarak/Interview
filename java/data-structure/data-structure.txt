@@ -1,0 +1,141 @@
+----------------------DataStructure--------------------------------------------------------
+* vector : 
+           1- increasing size is double if you add(11) item size become(20) 
+           2- every methods on vector is synchronized ,it mean's thread save so its slow
+
+
+* ArrayList : 
+              1- increasing size by half if you add (11) item size become (15) 
+              2- not thread save so its fast
+              3- Dynamic Array , time consuming when update value on half of the list 
+ 
+
+* LinkedList : 
+               1- featch element by the previous element
+               2-
+               3 - faster than arryList on add element 
+               4- slower than arryList on featch element
+
+
+* HashMap : 
+            1- not thread save 
+            2- asynchronous , faster
+            3- work with single thread
+            4- allow one null key
+            5- incertion order not fixed  -> if u need to orderd use linked hashMap
+            6- if u need sorted element use -> treeHashMap
+
+
+* HashTable :
+               - same hashMap but :
+               1- thread save 
+               2- synchronous , slower
+               3- work with multiple thread
+               4- dont allow one null key
+
+*ConcurrentHashMap : 7
+                    1 - it is HashMap but : thread save ( only one can access its functionalities like :Put( ) ,...).
+
+
+
+----------------------oop--------------------------------------------------------
+
+* static : 
+          1- variable will get the memory only once and retain its value.
+          2- excute before main() funuction.
+          3- static value stored on Heep and access it once only.
+          4- if you have methods static you dont need to create object 
+          from a class that belong to . directilly use a class name ex:(Animal.eat()) 
+
+* final :
+         1- if variable is final it cant change its value.
+         2- if method final we cant override it.
+         3 - if class is final no one can extend it.
+
+
+
+
+* singletonClass:
+                1- Singleton controls concurrent access to the resource.
+                2-It ensures there is only one object available across the application in a controlled state.
+
+
+
+* abstract class : 
+                   1- Abstract class in java can’t be instantiated.
+                   2- It’s not necessary for an abstract class to have abstract method. We can mark a class as abstract 
+                      even if it doesn’t declare any abstract methods.
+
+
+* interface:
+             1- It cannot be instantiated just like the abstract class.
+             2- Since Java 8, we can have default and static methods in an interface.
+             3- Since Java 9, we can have private methods in an interface.
+             4- Since Java 8, we can have default and static methods in an interface.
+             5- Since Java 9, we can have private methods in an interface.
+             6-A class that implements an interface must implement all the methods declared in the interface.
+
+
+
+*instanceof :
+             1- We often use instanceof operator before downcasting to check if the object belongs to the specific type.
+
+
+
+* Spring boot :
+                1- easy configration .
+                2- production ready .
+
+
+* Spring Framework : 1- use concept of singletone design pattern.
+                     2- meaning you dont need to wait to object creation.    
+                     3- it give you object when application start.
+                     4- in singletone you only have one instance from object.
+
+
+* hibernate : 1- Egar: query when object created.
+              2 - Lazy: query when properity is called.
+
+
+* @Transactional: when you need to fire two operation on single logic unit.
+                 for ex: insert new_emp , insert emp_health_insurance this two APIs should 
+                 persistent on single unit (with us) , so insert new_emp cant persistent
+                 if insert emp_health_insurance faild. and the opposite.
+                 hint: Spring Boot implicitly creates a proxy for the @Transactional: annotated .
+                 create begin and end transaction.
+
+
+(mandatory,.....? اعرف اكتر 
+
+
+* serialization : Serialization in Java is a mechanism of writing the state of an object into a byte-stream 
+
+
+Life cycle of a Thread (Thread States)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
